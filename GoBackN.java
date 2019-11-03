@@ -2,7 +2,7 @@ import java.lang.*;
 import java.util.*;
 class GoBackN
 {
-public static void main(String args[])
+	public static void main(String args[])
 	{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("\nImplementing Sliding Window Protocol using GoBackN apporach\n");
@@ -12,7 +12,7 @@ public static void main(String args[])
 		int transmit[] = new int[frame];
 		int transmit_flag[] = new int[frame];
 		int receive[] = new int[frame-1];
-		int index=0;					//To keep track of Window
+		int index=0;						//To keep track of Window
 		int count1=0;
 		int count2=0;
 		for(int c=0;c<n;c++)
@@ -69,10 +69,11 @@ public static void main(String args[])
 							{
 								index+=1;
 							}
+
 						}
 						else
 						{
-							System.out.println(receive[c]+ " is not acknowledged\n");
+							System.out.println(receive[c]+" is not acknowledged");
 							break; 
 						}
 					}
@@ -101,6 +102,4 @@ public static void main(String args[])
 					break;
 				}
 			}
-		}while(inp!=2);
-	}
-}
+		}while(inp!=2);}}
