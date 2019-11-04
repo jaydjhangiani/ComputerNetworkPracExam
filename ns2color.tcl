@@ -2,9 +2,9 @@ set ns [new Simulator]
 $ns color 1 Blue
 $ns color 2 Red
 set nf [open out.nam w]
-$ns nametrace-all $nf
+$ns namtrace-all $nf
 
-proc finish{}{
+proc finish {} {
     global ns nf
     $ns flush-trace
     close $nf
@@ -27,20 +27,20 @@ $ns duplex-link-op $n2 $n3 orient right
 
 set udp0 [new Agent/UDP]
 $ns attach-agent $n0 $udp0
-$udpo set class_1
+$udpo set class_ 1
 
 set cbr0 [new Attachment/Traffic/CBR]
-$cbr0 set packetSize_500
-$cbr0 set interval_0.005
+$cbr0 set packetSize_ 500
+$cbr0 set interval_ 0.005
 $cbr0 attach-agent $udp0
 
 set udp1 [new Agent/UDP]
 $ns attach-agent $n1 $udp1
-$udpo set class_2
+$udpo set class_ 2
 
 set cbr1 [new Attachment/Traffic/CBR]
-$cbr1 set packetSize_500
-$cbr1 set interval_0.005
+$cbr1 set packetSize_ 500
+$cbr1 set interval_ 0.005
 $cbr1 attach-agent $udp1
 
 set null0 [new Agent/Null]
