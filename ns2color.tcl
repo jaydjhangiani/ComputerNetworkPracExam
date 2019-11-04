@@ -25,25 +25,25 @@ $ns duplex-link-op $no $n2 orient right-up
 $ns duplex-link-op $no $n1 orient right-down
 $ns duplex-link-op $n2 $n3 orient right
 
-set udp0[new Agent/UDP]
+set udp0 [new Agent/UDP]
 $ns attach-agent $n0 $udp0
 $udpo set class_1
 
-set cbr0[new Attachment/Traffic/CBR]
+set cbr0 [new Attachment/Traffic/CBR]
 $cbr0 set packetSize_500
 $cbr0 set interval_0.005
 $cbr0 attach-agent $udp0
 
-set udp1[new Agent/UDP]
+set udp1 [new Agent/UDP]
 $ns attach-agent $n1 $udp1
 $udpo set class_2
 
-set cbr1[new Attachment/Traffic/CBR]
+set cbr1 [new Attachment/Traffic/CBR]
 $cbr1 set packetSize_500
 $cbr1 set interval_0.005
 $cbr1 attach-agent $udp1
 
-set null0[new Agent/Null]
+set null0 [new Agent/Null]
 $ns attach-agent $n3 $null0
 $ns connect $udp0 $null0
 $ns connect $udp1 $null0
